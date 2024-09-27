@@ -1,13 +1,9 @@
+import FeCarousel from "../components/fe_carousel"
+
 const Home = ()=>{
     return(
         <div>
-            <h1>This is HOme Page</h1>
-            <div style={{
-                backgroundColor: "red",
-                height: "200vh"
-            }}>
-                dkfjkdf
-            </div>
+            <FeCarousel/>
         </div>
     )
 }

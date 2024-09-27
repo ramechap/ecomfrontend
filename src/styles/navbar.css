@@ -8,6 +8,7 @@
     top: 0;
     overflow: hidden;
     align-items: center;
+    z-index: 1;
 }
 .Navbar .Menus{
     display: flex;
@@ -26,4 +27,19 @@
 .Icons .icon{
     font-size: 25px;
     margin: 0px 10px;
+}
+a{
+    text-decoration: none;
+    color: bisque;
+    transition: 0.3s;
+}
+a:active{
+    color: bisque;
+}
+a:visited{
+    color:bisque;
+}
+a:hover{
+    transform: scale(1.2,1.2);
+    color:white;
 }
