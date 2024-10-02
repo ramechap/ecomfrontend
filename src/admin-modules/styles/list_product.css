@@ -39,7 +39,7 @@
     transform: translateY(-5px);
 }
 
-.ProductImage img {
+.ProductListImage img {
     width: 150px;
     height: 150px;
     border-radius: 8px;

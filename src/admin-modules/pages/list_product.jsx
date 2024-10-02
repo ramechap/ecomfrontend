@@ -46,7 +46,7 @@ const ListProduct = () => {
                     {products.map((product) => (
                         <li key={product.id} className="ProductListItem">
                             <div className="ProductListCard">
-                                <div className="ProductImage">
+                                <div className="ProductListImage">
                                     <img src={product.imageUrl} alt={product.name} />
                                 </div>
                                 <div className="ProductDetails">
