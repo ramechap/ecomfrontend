@@ -1,0 +1,103 @@
+.ProductHeading{
+    text-align: center;
+    color: teal;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+}
+
+.ProductCardsGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 20px;
+    /* padding: 20px; */
+}
+
+/* Product Card Css */
+.ProductSlogan{
+    text-align: center;
+    color: olivedrab;
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Arial', sans-serif;
+}
+
+.ProductCard {
+    /* width: 350px; */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(37, 140, 52, 0.584);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+    text-align: center;
+}
+
+.ProductCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(37, 140, 52, 0.584);
+}
+
+.ProductImage img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.ProductCard:hover .ProductImage img {
+    transform: scale(1.05);
+}
+
+.ProductDetails {
+    padding: 20px;
+    background-color: #fff;
+    text-align: left;
+}
+
+.ProductName {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.ProductDescription {
+    font-size: 14px;
+    color: #777;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.ProductPrice {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.AddToCart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.AddToCart button {
+    width: 100%;
+    background-color: #ff4d4d;
+    color: white;
+    padding: 12px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 20px;
+}
+
+.AddToCart button:hover {
+    background-color: #e60000;
+    transform: scale(1.05);
+}

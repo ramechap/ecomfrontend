@@ -1,0 +1,75 @@
+/* Center the ProductFormCard on the page */
+.ProductForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+/* Style the form card with shadow and padding */
+.ProductFormCard {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+.ProductFormCard h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Form field styling */
+.FormField {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.FormField label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+.FormField input,
+.FormField textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+}
+
+.FormField input:focus,
+.FormField textarea:focus {
+    border-color: #ff4d4d;
+    outline: none;
+}
+
+/* Specific styling for textarea */
+.FormField textarea {
+    resize: none;
+    height: 100px;
+}
+
+/* Button styling */
+.FormField button {
+    background-color: #ff4d4d;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.FormField button:hover {
+    background-color: #e60000;
+}
