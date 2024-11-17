@@ -20,8 +20,8 @@ const Navbar = ()=>{
                 <Link to={"/products"}>
                     <p>Products</p>
                 </Link>
-                <Link to={"/about"}>
-                    <p>About Us</p>
+                <Link to={"/admin/product/list"}>
+                    <p>Admin</p>
                 </Link>
             </div>
             {/* for icons */}

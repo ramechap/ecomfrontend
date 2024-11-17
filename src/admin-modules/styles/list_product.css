@@ -128,3 +128,32 @@
 .ProductDetails button:hover {
     opacity: 0.9;
 }
+.ProductListHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.AddProductButton{
+    position: relative;
+  
+    right: 20px;
+    z-index: 1;
+}
+.AddProductButton button:active {
+    transform: scale(0.98);
+}
+.AddProductButton button {
+    background-color: #3498db;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.AddProductButton button:hover {
+    background-color: #2980b9;
+}
