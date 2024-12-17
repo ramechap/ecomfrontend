@@ -9,6 +9,9 @@ import ProductPage from './pages/product_page';
 import AddProduct from './admin-modules/pages/add_product';
 import EditProduct from './admin-modules/pages/edit_product';
 import ListProduct from './admin-modules/pages/list_product';
+import Cart from './cart/cart';
+import Login from './admin-modules/pages/login';
+import Register from './admin-modules/pages/register';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,9 +21,12 @@ root.render(
         <Route path='/' element={<App/>}>
           <Route index element={<Home/>}/>
           <Route path='products' element={<ProductPage/>}/>
+          <Route path='cart' element={<Cart/>}/>
           <Route path='/admin/product/add' element={<AddProduct/>}/>
           <Route path='/admin/product/edit' element={<EditProduct/>}/>
           <Route path='/admin/product/list' element={<ListProduct/>}/>
+          <Route path='/admin/auth/login' element={<Login/>}/>
+          <Route path='/admin/auth/register' element={<Register/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

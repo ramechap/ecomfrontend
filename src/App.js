@@ -3,15 +3,18 @@ import './App.css';
 import { Outlet } from 'react-router-dom';
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <div className='AppContainer'>
-      <Navbar/>
+      <Navbar />
+      <ToastContainer limit={3}/>
       <div className='AppContent'>
-        <Outlet/>
+        <Outlet />
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

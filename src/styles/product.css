@@ -8,9 +8,28 @@
 
 .ProductCardsGrid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, auto));
     grid-gap: 20px;
     /* padding: 20px; */
+    justify-content: start;
+    margin: 20px;
+}
+
+.ProductCard {
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 350px;
+    box-shadow: 0 4px 12px rgba(37, 140, 52, 0.584);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    position: relative;
+}
+
+.ProductCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(37, 140, 52, 0.584);
 }
 
 /* Product Card Css */
@@ -22,27 +41,10 @@
     font-family: 'Arial', sans-serif;
 }
 
-.ProductCard {
-    /* width: 350px; */
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(37, 140, 52, 0.584);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-    font-family: 'Arial', sans-serif;
-    margin: 20px;
-    text-align: center;
-    position: relative;
-}
-
-.ProductCard:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(37, 140, 52, 0.584);
-}
-
 .ProductImage img {
     width: 100%;
     height: 220px;
+    min-height: 220px;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
@@ -51,10 +53,20 @@
     transform: scale(1.05);
 }
 
+.ProductInfoQuantiy{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .ProductDetails {
     padding: 20px;
     background-color: #fff;
     text-align: left;
+}
+.ManageQuantity{
+    padding: 20px;
 }
 
 .ProductName {
@@ -78,10 +90,12 @@
 }
 
 .AddToCart{
-    position: absolute;
+    position: relative;
     /* left: 0; */
     right: 0;
     bottom: 0px;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
 .AddToCart button {
@@ -110,4 +124,17 @@
     margin-top: 100px;
     font-weight: bold;
     font-family: 'Arial', sans-serif;
+}
+
+.line-through{
+    text-decoration: line-through;
+    color: gray;
+}
+
+.ProductPriceRow{
+    display: flex;
+    align-items: center;
+}
+.ProductPriceRow>p{
+    margin-right: 10px;
 }

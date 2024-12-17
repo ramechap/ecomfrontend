@@ -1,0 +1,164 @@
+
+.CartPage {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.CartListHeader h2 {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+.CartListItems {
+    list-style: none;
+    padding: 0;
+}
+
+.CartListItem {
+    margin-bottom: 20px;
+}
+
+/* Card styling for each Cart */
+.CartListCard {
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(224, 134, 86, 0.504);
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.CartListCard:hover {
+    transform: translateY(-5px);
+}
+
+.CartListImage img {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.CartDetails {
+    flex-grow: 1;
+}
+
+/* Styling for the Cart details */
+.CartID, .CartName, .CartDescription, .CartPrice {
+    margin: 5px 0;
+}
+
+.CartID {
+    font-size: 14px;
+    color: #888;
+}
+
+.CartName {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.CartDescription {
+    font-size: 16px;
+    color: #555;
+}
+
+.CartPrice {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+/* Button styling */
+.EditButton, .DeleteButton {
+    padding: 10px 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+}
+
+.EditButton {
+    background-color: #3498db;
+    color: white;
+}
+
+.EditButton:hover {
+    background-color: #2980b9;
+}
+
+.DeleteButton {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.DeleteButton:hover {
+    background-color: #c0392b;
+}
+
+/* Input and textarea styling for editing */
+.CartDetails input, .CartDetails textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.CartDetails .EditButton {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.CartDetails .EditButton:hover {
+    opacity: 0.9;
+}
+.CartListHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.CartActions{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.CheckoutButtonContainer{
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    z-index: 1;
+}
+.CheckoutButtonContainer button{
+    padding: 10px 20px;
+    background-color: rgb(8, 98, 98);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    transition: border-radius 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.CheckoutButtonContainer button:hover{
+    background-color: #29afb9;
+    color: rgb(10, 61, 60);
+    border-radius: 10px 0px 10px 0px;
+}

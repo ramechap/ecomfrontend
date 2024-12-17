@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../styles/list_product.css";
 import { Navigate, useNavigate } from "react-router-dom";
 import { deleteProduct, getAllProducts } from "../../data/product_data";
+import ImageWithLoader from "../../components/image_with_loader";
 
 const ListProduct = () => {
     const [products, setProducts] = useState([]);
@@ -47,7 +48,7 @@ const ListProduct = () => {
                         <li key={product.id} className="ProductListItem">
                             <div className="ProductListCard">
                                 <div className="ProductListImage">
-                                    <img src={product.image} alt={product.name} />
+                                    <ImageWithLoader width={150} imageUrl={product.image} alternativeText={product.name} />
                                 </div>
                                 <div className="ProductDetails">
                                     <>
