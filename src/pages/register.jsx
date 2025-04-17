@@ -21,7 +21,7 @@ const RegisterUser = () => {
     e.preventDefault();
 
     if (formData.password === formData.confirmPassword) {
-      const res = await fetch("http://localhost:5000/auth/register", {
+      const res = await fetch("https://ecommerce-food-api.onrender.com/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

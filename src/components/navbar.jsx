@@ -13,7 +13,7 @@ const Navbar = () => {
     const navigate = useNavigate()
     const logout = async () => {
         try {
-            const user = await axios.get(`http://localhost:5000/auth/logout`, { withCredentials: true })
+            const user = await axios.get(`https://ecommerce-food-api.onrender.com/auth/logout`, { withCredentials: true })
             alert("Logout Successfull")
             navigate("/login")
             setAuthenticated(false)

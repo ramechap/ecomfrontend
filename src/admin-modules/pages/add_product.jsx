@@ -16,7 +16,7 @@ const AddProduct = ()=>{
             alert("Please fill all the fields")
             return
         }
-        const res = await fetch("http://localhost:5000/product/createpost", {
+        const res = await fetch("https://ecommerce-food-api.onrender.com/product/createpost", {
             method: "POST",
             headers: {
               "Content-Type": "application/json"

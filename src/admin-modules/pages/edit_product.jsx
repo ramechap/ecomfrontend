@@ -48,7 +48,7 @@ const EditProduct = () => {
         try {
             // Sending the user._id as a query parameter
             const response = await axios.put(
-              `http://localhost:5000/product/update/${product._id}?author=${user._id}`,{ title: name, photourl:image, description:description, price:price},
+              `https://ecommerce-food-api.onrender.com/product/update/${product._id}?author=${user._id}`,{ title: name, photourl:image, description:description, price:price},
               { withCredentials: true }
             );
             showSuccessToast({

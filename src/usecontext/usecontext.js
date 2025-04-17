@@ -17,7 +17,7 @@ export default function ThemeProviders({ children }) {
     const AllProduct = async () => {
       try {
 
-        const response = await axios.get("http://localhost:5000/product/getallpost", {
+        const response = await axios.get("https://ecommerce-food-api.onrender.com/product/getallpost", {
 
         });
 
@@ -39,7 +39,7 @@ export default function ThemeProviders({ children }) {
     const Profile = async () => {
       try {
 
-        const response = await axios.get("http://localhost:5000/auth/profile", {
+        const response = await axios.get("https://ecommerce-food-api.onrender.com/auth/profile", {
           withCredentials: true,
         });
 
@@ -62,7 +62,7 @@ export default function ThemeProviders({ children }) {
   useEffect(() => {
     const IsAdmin = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/auth/checkadmin", {
+        const response = await axios.get("https://ecommerce-food-api.onrender.com/auth/checkadmin", {
           withCredentials: true, // Make sure cookies are sent with the request
         });
         if (response.status === 200) {
@@ -85,7 +85,7 @@ export default function ThemeProviders({ children }) {
   const handleAddToCartClick = async (id) => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/product/addtocart/${id}`,
+        `https://ecommerce-food-api.onrender.com/product/addtocart/${id}`,
         { author: user._id }, // Pass the user ID or whatever data is needed
         { withCredentials: true } // Ensure credentials (cookies, tokens) are sent
       );
@@ -100,7 +100,7 @@ export default function ThemeProviders({ children }) {
   const handleDeleteToCartClick = async (id) => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/product/deletefromcart/${id}`,
+        `https://ecommerce-food-api.onrender.com/product/deletefromcart/${id}`,
         { author: user._id },
         { withCredentials: true }
       );
@@ -117,7 +117,7 @@ export default function ThemeProviders({ children }) {
     try {
       // Sending the user._id as a query parameter
       const response = await axios.delete(
-        `http://localhost:5000/product/delete/${id}?author=${user._id}`,
+        `https://ecommerce-food-api.onrender.com/product/delete/${id}?author=${user._id}`,
         { withCredentials: true }
       );
       showSuccessToast({
@@ -134,7 +134,7 @@ export default function ThemeProviders({ children }) {
     const GetAllCart = async () => {
       try {
 
-        const response = await axios.get(`http://localhost:5000/product/alladdtocart?author=${user._id}`, {
+        const response = await axios.get(`https://ecommerce-food-api.onrender.com/product/alladdtocart?author=${user._id}`, {
           withCredentials: true,
         });
 
