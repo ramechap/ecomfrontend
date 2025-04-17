@@ -1,7 +1,11 @@
 import React, { useState } from "react";
-import "../styles/register.css";
+import "../admin-modules/styles/register.css";
 
-const Register = () => {
+import { useNavigate } from "react-router-dom";
+import axios from 'axios';
+import { showErrorToast, showSuccessToast } from "../utils/toast_utils";
+const RegisterUser = () => {
+  const navigate=useNavigate()
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -13,14 +17,36 @@ const Register = () => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match!");
+
+    if (formData.password === formData.confirmPassword) {
+      const res = await fetch("http://localhost:5000/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+          username: formData.username, email: formData.email, password: formData.password,
+          confirmpassword: formData.confirmPassword
+        })
+      })
+      const ress = await res.json()
+      
+      navigate("/login")
+      showSuccessToast({
+        message: `Account Registered`,
+      });
+      
+      alert("Account Registered")
+    }
+    else {
+      showErrorToast({ message: 'Passwords do not match!' });
+     
       return;
     }
-    console.log("Registration Data: ", formData);
+
   };
 
   return (
@@ -77,4 +103,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default RegisterUser;

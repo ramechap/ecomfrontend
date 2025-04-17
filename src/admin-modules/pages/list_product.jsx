@@ -3,9 +3,11 @@ import "../styles/list_product.css";
 import { Navigate, useNavigate } from "react-router-dom";
 import { deleteProduct, getAllProducts } from "../../data/product_data";
 import ImageWithLoader from "../../components/image_with_loader";
+import { UseProductContext } from "../../usecontext/usecontext";
 
 const ListProduct = () => {
-    const [products, setProducts] = useState([]);
+    const {Allproduct,handleDeleteProduct}=UseProductContext()
+  
     const navigate = useNavigate()
     const handleEdit = ({ product }) => {
         navigate("/admin/product/edit", {
@@ -13,24 +15,14 @@ const ListProduct = () => {
         })
     }
 
-    useEffect(
-        () => {
-            getAllProducts().then(
-                (allProducts) => {
-                    setProducts(allProducts)
-                }
-            );
-        },
-        []
-    )
-
+    
     const handleDelete = async ({ product }) => {
-        const confirmDelete = window.confirm("Are you sure you want to delete this product : " + product.name + "?")
-        console.log(confirmDelete)
+        const confirmDelete = window.confirm("Are you sure you want to delete this product : " + product.title + "?")
+      
         if (confirmDelete) {
-            await deleteProduct({ productId: product.id })
-            alert("Product deleted successfully")
-            navigate(0)
+          await  handleDeleteProduct(product._id)
+         
+            
         }
     }
 
@@ -42,18 +34,18 @@ const ListProduct = () => {
                     <button onClick={() => navigate("/admin/product/add")}>Add Product</button>
                 </div>
             </div>
-            {products.length > 0 ? (
+            {Allproduct.length > 0 ? (
                 <ul className="ProductListItems">
-                    {products.map((product) => (
+                    {Allproduct.map((product) => (
                         <li key={product.id} className="ProductListItem">
                             <div className="ProductListCard">
                                 <div className="ProductListImage">
-                                    <ImageWithLoader width={150} imageUrl={product.image} alternativeText={product.name} />
+                                    <ImageWithLoader width={150} imageUrl={product.photourl} alternativeText={product.title} />
                                 </div>
                                 <div className="ProductDetails">
                                     <>
-                                        <p className="ProductID">ID: {product.id}</p>
-                                        <h3 className="ProductName">{product.name}</h3>
+                                        <p className="ProductID">ID: {product._id}</p>
+                                        <h3 className="ProductName">{product.title}</h3>
                                         <p className="ProductDescription">{product.description}</p>
                                         <p className="ProductPrice">₹ {product.price}</p>
                                         <button className="EditButton" onClick={() => handleEdit({ product })}>Edit</button>

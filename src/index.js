@@ -3,33 +3,44 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/home';
 import ProductPage from './pages/product_page';
 import AddProduct from './admin-modules/pages/add_product';
 import EditProduct from './admin-modules/pages/edit_product';
 import ListProduct from './admin-modules/pages/list_product';
 import Cart from './cart/cart';
-import Login from './admin-modules/pages/login';
-import Register from './admin-modules/pages/register';
+
+
+import LoginUser from './pages/login';
+import RegisterUser from './pages/register';
+import ThemeProviders, { UseProductContext } from './usecontext/usecontext';
+import ProtectedRoute from './protected/protectedroute';
+import AdminRoute from './admin-modules/route/adminroute';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <ThemeProviders>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App/>}>
           <Route index element={<Home/>}/>
           <Route path='products' element={<ProductPage/>}/>
           <Route path='cart' element={<Cart/>}/>
-          <Route path='/admin/product/add' element={<AddProduct/>}/>
-          <Route path='/admin/product/edit' element={<EditProduct/>}/>
-          <Route path='/admin/product/list' element={<ListProduct/>}/>
-          <Route path='/admin/auth/login' element={<Login/>}/>
-          <Route path='/admin/auth/register' element={<Register/>}/>
+          <Route path='login' element={<LoginUser/>}/>
+          <Route path='register' element={<RegisterUser/>}/>
+           {/* Protected Admin Routes */}
+           <Route path="/admin/*" element={<AdminRoute />} />
+           
+          
+         
+          
         </Route>
       </Routes>
     </BrowserRouter>
+
+    </ThemeProviders>
   </React.StrictMode>
 );
 

@@ -2,8 +2,13 @@ import { useLocation, useNavigate } from "react-router-dom"
 import ProductForm from "../components/product_form"
 import { useEffect, useState } from "react"
 import { updateProduct } from "../../data/product_data"
+import { UseProductContext } from "../../usecontext/usecontext"
+import axios from "axios"
+import { showErrorToast, showSuccessToast } from "../../utils/toast_utils"
 
 const EditProduct = () => {
+    const {user}=UseProductContext()
+
     const location = useLocation()
     const [product, setProduct] = useState([])
     const [name, setName] = useState("")
@@ -14,18 +19,19 @@ const EditProduct = () => {
 
     useEffect(
         () => {
-            if (location.state && location.state.product) {
+            if (location.state ) {
                 setProduct(location.state.product)
-                console.log("product, ", product)
+             
+                
 
             }
         },
-        [location]
+        [product]
     )
     useEffect(
         () => {
-            setName(product.name)
-            setImage(product.image)
+            setName(product.title)
+            setImage(product.photourl)
             setDescription(product.description)
             setPrice(product.price)
         },
@@ -34,14 +40,31 @@ const EditProduct = () => {
     const navigate = useNavigate()
     const handleSubmit = async(e)=>{
         e.preventDefault()
-        console.log({name, image, description, price})
         if(!name || !image || !description || !price){
             alert("Please fill all the fields")
             return
         }
-        await updateProduct({id: product.id, name, image, description, price})
-        alert("Product updated successfully")
-        navigate(-1)
+         
+        try {
+            // Sending the user._id as a query parameter
+            const response = await axios.put(
+              `http://localhost:5000/product/update/${product._id}?author=${user._id}`,{ title: name, photourl:image, description:description, price:price},
+              { withCredentials: true }
+            );
+            showSuccessToast({
+              message: `Updated the product`,
+            });
+            navigate("/admin/product/list")
+          } catch (error) {
+            showErrorToast({ message: 'Error updateing product ' });
+          
+          }
+        
+         
+          
+        
+       
+        
     }
     return (
         <div>

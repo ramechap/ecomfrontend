@@ -3,36 +3,20 @@ import ProductCard from "../components/product_card"
 import "../styles/product.css"
 import { getAllProducts } from "../data/product_data"
 import { showErrorToast, showInfoToast, showWarningToast } from "../utils/toast_utils"
+import { UseProductContext } from "../usecontext/usecontext"
 const ProductPage = () => {
-    const [allProducts, setAllProducts] = useState([])
 
-    useEffect(
-        () => {
-            getAllProducts().then(
-                (allProducts) => {
-                    setAllProducts(allProducts)
-                }
-            );
-        },
-        []
-    )
+    const {Allproduct,handleAddToCartClick}=UseProductContext()
 
-    const handleAddToCartClick = (quantity)=>{
-        console.log("quanity inside product page: ", quantity)
-        if(quantity <= 0){
-            console.log("quantity less than or equal to zero")
-            showErrorToast({message:"quantity must be greater than zero to add to cart"})
-            return
-        }
-    }
+    
     return (
         <div className="ProductMain">
             <h1 className="ProductHeading">Our Foods</h1>
             <p className="ProductSlogan">We make your food experience better & more delicious.</p>
             <div className="ProductCardsGrid">
                 {
-                    allProducts.length > 0 ?
-                        allProducts.map(
+                    Allproduct.length > 0 ?
+                    Allproduct.map(
                             (product) => <ProductCard product={product} key={product.id} onClickAddToCart={handleAddToCartClick} />
                         )
                         : <div id="no-product-found">No Products Found!!!</div>
