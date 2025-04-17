@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../styles/list_product.css";
-import { Navigate, useNavigate } from "react-router-dom";
-import { deleteProduct, getAllProducts } from "../../data/product_data";
+import {  useNavigate } from "react-router-dom";
 import ImageWithLoader from "../../components/image_with_loader";
 import { UseProductContext } from "../../usecontext/usecontext";
 

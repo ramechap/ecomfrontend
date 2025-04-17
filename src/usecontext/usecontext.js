@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import ThemeContexts from './createcontext';
-import { useNavigate } from 'react-router-dom';
+
 import axios from 'axios';
 import { showErrorToast, showSuccessToast } from '../utils/toast_utils';
 
@@ -84,7 +84,7 @@ export default function ThemeProviders({ children }) {
 
   const handleAddToCartClick = async (id) => {
     try {
-      const response = await axios.put(
+       await axios.put(
         `https://ecommerce-food-api.onrender.com/product/addtocart/${id}`,
         { author: user._id }, // Pass the user ID or whatever data is needed
         { withCredentials: true } // Ensure credentials (cookies, tokens) are sent
@@ -99,7 +99,7 @@ export default function ThemeProviders({ children }) {
   };
   const handleDeleteToCartClick = async (id) => {
     try {
-      const response = await axios.put(
+      await axios.put(
         `https://ecommerce-food-api.onrender.com/product/deletefromcart/${id}`,
         { author: user._id },
         { withCredentials: true }
@@ -116,7 +116,7 @@ export default function ThemeProviders({ children }) {
   const handleDeleteProduct = async (id) => {
     try {
       // Sending the user._id as a query parameter
-      const response = await axios.delete(
+       await axios.delete(
         `https://ecommerce-food-api.onrender.com/product/delete/${id}?author=${user._id}`,
         { withCredentials: true }
       );

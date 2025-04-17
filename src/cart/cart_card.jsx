@@ -1,5 +1,4 @@
 import ImageWithLoader from "../components/image_with_loader";
-import QuantitySelector from "../components/quantity_selector";
 
 export default function CartCard({ Cart,handleDeleteToCartClick }) {
     return (

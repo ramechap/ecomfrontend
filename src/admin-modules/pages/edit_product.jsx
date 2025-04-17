@@ -1,7 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom"
 import ProductForm from "../components/product_form"
 import { useEffect, useState } from "react"
-import { updateProduct } from "../../data/product_data"
 import { UseProductContext } from "../../usecontext/usecontext"
 import axios from "axios"
 import { showErrorToast, showSuccessToast } from "../../utils/toast_utils"

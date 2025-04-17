@@ -3,18 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/home';
 import ProductPage from './pages/product_page';
-import AddProduct from './admin-modules/pages/add_product';
-import EditProduct from './admin-modules/pages/edit_product';
-import ListProduct from './admin-modules/pages/list_product';
 import Cart from './cart/cart';
 
 
 import LoginUser from './pages/login';
 import RegisterUser from './pages/register';
-import ThemeProviders, { UseProductContext } from './usecontext/usecontext';
+import ThemeProviders from './usecontext/usecontext';
 import ProtectedRoute from './protected/protectedroute';
 import AdminRoute from './admin-modules/route/adminroute';
 

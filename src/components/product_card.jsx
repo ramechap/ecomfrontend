@@ -1,13 +1,10 @@
-import QuantitySelector from "./quantity_selector"
 import ImageWithLoader from "./image_with_loader"
-import { useState } from "react"
 import { UseProductContext } from "../usecontext/usecontext"
 import { useNavigate } from "react-router-dom"
 
 const ProductCard = ({ product, onClickAddToCart }) => {
-    const [quantity, setQuantity] = useState(0)
     
-    const { user, authenticated, setAuthenticated,isAdmin } = UseProductContext()
+    const { user, authenticated } = UseProductContext()
     const navigate=useNavigate()
 
     return (

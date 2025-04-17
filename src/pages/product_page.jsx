@@ -1,8 +1,5 @@
-import { useEffect, useState } from "react"
 import ProductCard from "../components/product_card"
 import "../styles/product.css"
-import { getAllProducts } from "../data/product_data"
-import { showErrorToast, showInfoToast, showWarningToast } from "../utils/toast_utils"
 import { UseProductContext } from "../usecontext/usecontext"
 const ProductPage = () => {
 

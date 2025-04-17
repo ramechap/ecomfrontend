@@ -43,7 +43,7 @@ export const updateProduct = async({id, name, price, image, description})=>{
                 return product.id === id;
             }
         )
-        if(index == -1){
+        if(index === -1){
             throw new Error("Product not found")
         }
         ///creating product object with id

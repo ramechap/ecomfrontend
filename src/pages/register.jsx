@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../admin-modules/styles/register.css";
 
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
+
 import { showErrorToast, showSuccessToast } from "../utils/toast_utils";
 const RegisterUser = () => {
   const navigate=useNavigate()
@@ -32,7 +32,7 @@ const RegisterUser = () => {
           confirmpassword: formData.confirmPassword
         })
       })
-      const ress = await res.json()
+      await res.json()
       
       navigate("/login")
       showSuccessToast({

@@ -1,6 +1,6 @@
 import '../styles/quantity-selector.css'; // Import the CSS
 
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { showInfoToast } from '../utils/toast_utils';
 
 function QuantitySelector({
@@ -11,7 +11,6 @@ function QuantitySelector({
   vertical,
 }) {
   const [quantity, setQuantity] = useState(0);
-  const [errorMessage, setErrorMessage] = useState('');
 
   const updateQuantity = (newValue) => {
     if (newValue < 0) {
