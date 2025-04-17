@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/ecomfrontend/static/css/main.d05c7318.css",
-    "main.js": "/ecomfrontend/static/js/main.ea6d2a18.js",
+    "main.css": "/ecomfrontend/static/css/main.00079ed5.css",
+    "main.js": "/ecomfrontend/static/js/main.6984fd00.js",
     "static/js/453.8ba51bc0.chunk.js": "/ecomfrontend/static/js/453.8ba51bc0.chunk.js",
     "static/media/pizza.avif": "/ecomfrontend/static/media/pizza.bf23f9a101fe2479352f.avif",
     "static/media/logo.svg": "/ecomfrontend/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/ecomfrontend/index.html",
-    "main.d05c7318.css.map": "/ecomfrontend/static/css/main.d05c7318.css.map",
-    "main.ea6d2a18.js.map": "/ecomfrontend/static/js/main.ea6d2a18.js.map",
+    "main.00079ed5.css.map": "/ecomfrontend/static/css/main.00079ed5.css.map",
+    "main.6984fd00.js.map": "/ecomfrontend/static/js/main.6984fd00.js.map",
     "453.8ba51bc0.chunk.js.map": "/ecomfrontend/static/js/453.8ba51bc0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d05c7318.css",
-    "static/js/main.ea6d2a18.js"
+    "static/css/main.00079ed5.css",
+    "static/js/main.6984fd00.js"
   ]
 }
