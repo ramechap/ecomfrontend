@@ -10,7 +10,45 @@ export default function ThemeProviders({ children }) {
   const [user, setuser] = useState("")
   const [Allproduct, setAllproduct] = useState([])
   const [Allcart, setAllcart] = useState([])
+  const [modalShow, setModalShow] = useState(false);
+  const [search, setsearch] = useState("")
+  const [minprice, setminprice] = useState(0)
+  const [maxPrice, setmaxPrice] = useState(Infinity)
+const [searchallproduct, setsearchallproduct] = useState([])
 
+
+  // useEffect(() => {
+
+  //   const SearchAllProduct = async () => {
+  //     try {
+
+  //       let url = "https://ecommerce-food-api.onrender.com/product/searchproduct?";
+        
+  //       if (search) url += `title=${search}&`; 
+  //       if (minprice) url += `minPrice=${minprice}&`; 
+  //       if (maxPrice) url += `maxPrice=${maxPrice}&`; 
+
+       
+  //       url = url.endsWith('&') ? url.slice(0, -1) : url;
+
+        
+  //       const response = await axios.get(url);
+
+  //       setsearchallproduct(response.data.post)
+
+
+
+  //     } catch (error) {
+
+  //       showErrorToast({ message: error })
+  //     }
+  //   }
+  //   if (search || minprice || maxPrice !== Infinity) {
+  //     SearchAllProduct(Allcart);
+  //   }
+
+
+  // }, [searchallproduct,search, minprice, maxPrice]);
 
   useEffect(() => {
 
@@ -22,6 +60,7 @@ export default function ThemeProviders({ children }) {
         });
 
         setAllproduct(response.data.post)
+       
 
 
 
@@ -35,6 +74,33 @@ export default function ThemeProviders({ children }) {
 
 
   }, [Allproduct]);
+  useEffect(() => {
+
+    const AllProduct = async () => {
+      try {
+
+        const response = await axios.get("https://ecommerce-food-api.onrender.com/product/getallpost", {
+
+        });
+
+       
+        setsearchallproduct(response.data.post)
+        if (!search ) {
+              setsearchallproduct(response.data.post);
+            }
+
+
+      } catch (error) {
+
+        showErrorToast({ message: error })
+      }
+    }
+    AllProduct()
+
+
+
+  }, []);
+
   useEffect(() => {
     const Profile = async () => {
       try {
@@ -151,7 +217,7 @@ export default function ThemeProviders({ children }) {
   }, [user]); // Re-run this effect when the user changes
 
   return (
-    <ThemeContexts.Provider value={{ authenticated, setAuthenticated, user, Allproduct, Allcart, handleAddToCartClick,handleDeleteProduct, handleDeleteToCartClick,isAdmin }}>
+    <ThemeContexts.Provider value={{ searchallproduct,setsearchallproduct,minprice,setminprice,maxPrice,setmaxPrice,search,setsearch,authenticated, modalShow,setModalShow,setAuthenticated, user, Allproduct, Allcart, handleAddToCartClick,handleDeleteProduct, handleDeleteToCartClick,isAdmin }}>
       {children}
     </ThemeContexts.Provider>
   );

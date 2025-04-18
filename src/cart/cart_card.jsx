@@ -12,7 +12,7 @@ export default function CartCard({ Cart,handleDeleteToCartClick }) {
                         <p className="CartID">ID: {Cart.product._id}</p>
                         <h3 className="CartName">{Cart.product.title}</h3>
                         <p className="CartDescription">{Cart.product.description}</p>
-                        <p className="CartPrice">₹ {Cart.product.price}</p>
+                        <p className="CartPrice">$ {Cart.product.price}</p>
                         <div className="CartActions">
                             <p>Quantity : {Cart.quantity}</p>
                             <button className="DeleteButton" onClick={()=>handleDeleteToCartClick(Cart.product._id)} >Delete</button>

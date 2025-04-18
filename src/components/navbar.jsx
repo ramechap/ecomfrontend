@@ -5,6 +5,7 @@ import { IoIosLogOut } from "react-icons/io";
 import { IoFastFoodOutline } from "react-icons/io5";
 import { RiLoginCircleFill } from "react-icons/ri"
 import { Link, useNavigate } from "react-router-dom";
+import { FaSearch } from "react-icons/fa";
 import axios from "axios";
 import { UseProductContext } from "../usecontext/usecontext";
 const Navbar = () => {
@@ -23,7 +24,7 @@ const Navbar = () => {
         }
     }
     return (
-        <div className="Navbar">
+        <div style={{"zIndex":2}} className="Navbar">
             {/* for logo */}
             <div className="Logo">
                 <Link to="/">
@@ -44,6 +45,9 @@ const Navbar = () => {
             </div>
             {/* for icons */}
             <div className="Icons">
+            <Link to={"/filterproduct"}>
+                    <FaSearch className="icon" />
+                </Link>
                 {user && authenticated ?
                     <Link onClick={logout} >
                         <IoIosLogOut className="icon" />

@@ -16,7 +16,7 @@ const ProductCard = ({ product, onClickAddToCart }) => {
             <div className="ProductInfoQuantiy">
                 <div className="ProductDetails">
                     <p className="ProductName">{product.title}</p>
-                    <p className="ProductDescription">{product.description.slice(0,50)}..</p>
+                    <p className="ProductDescription">{product.description?.slice(0,50)}..</p>
                     <div className="ProductPriceRow">
                         <p className={ "ProductPrice"}>$ {product.price}</p>
                     </div>

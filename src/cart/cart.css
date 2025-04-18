@@ -162,3 +162,16 @@
     color: rgb(10, 61, 60);
     border-radius: 10px 0px 10px 0px;
 }
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* white-space: nowrap; */
+}
+@media (min-width: 1200px) {
+    .col-xl-4 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 100%;
+    }
+}

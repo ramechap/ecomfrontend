@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../admin-modules/styles/login.css";
 import axios from 'axios';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { showErrorToast, showSuccessToast } from "../utils/toast_utils";
 const LoginUser = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -15,13 +15,13 @@ const LoginUser = () => {
     e.preventDefault();
     try {
      
-      const response = await axios.post("https://ecommerce-food-api.onrender.com/auth/login", {
+       await axios.post("https://ecommerce-food-api.onrender.com/auth/login", {
         email: formData.email,
         password: formData.password
       }, {
         withCredentials: true, 
       });
-      console.log(response)
+      
        showSuccessToast({
                     message: `Login successful`,
                   });
@@ -62,6 +62,9 @@ const LoginUser = () => {
             onChange={handleChange}
             required
           />
+        </div>
+        <div className="form-group">
+          <Link style={{color:"red"}} to="/register" >No Account?</Link>
         </div>
         <button type="submit" className="login-btn">Login</button>
       </form>

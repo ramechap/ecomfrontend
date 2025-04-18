@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../admin-modules/styles/register.css";
 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { showErrorToast, showSuccessToast } from "../utils/toast_utils";
 const RegisterUser = () => {
@@ -97,6 +97,10 @@ const RegisterUser = () => {
             required
           />
         </div>
+        
+         <div className="form-group">
+                  <Link style={{color:"red"}} to="/login" >Already Have Account?</Link>
+                </div>
         <button type="submit" className="register-btn">Register</button>
       </form>
     </div>

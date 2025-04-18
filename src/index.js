@@ -14,6 +14,8 @@ import RegisterUser from './pages/register';
 import ThemeProviders from './usecontext/usecontext';
 import ProtectedRoute from './protected/protectedroute';
 import AdminRoute from './admin-modules/route/adminroute';
+import Practroute from './prac1/practroute';
+import SearchProduct from './pages/seachproduct';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -27,8 +29,11 @@ root.render(
           <Route path='cart' element={<Cart/>}/>
           <Route path='login' element={<LoginUser/>}/>
           <Route path='register' element={<RegisterUser/>}/>
+          <Route path='filterproduct' element={<SearchProduct/>}/>
            {/* Protected Admin Routes */}
            <Route path="/admin/*" element={<AdminRoute />} />
+          
+
            
           
          
