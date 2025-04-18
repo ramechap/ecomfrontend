@@ -32,7 +32,7 @@ root.render(
           <Route path='filterproduct' element={<SearchProduct/>}/>
            {/* Protected Admin Routes */}
            <Route path="/admin/*" element={<AdminRoute />} />
-          
+           <Route path="/prac1/*" element={<Practroute />} />
 
            
           
