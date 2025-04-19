@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -16,6 +16,14 @@ import ProtectedRoute from './protected/protectedroute';
 import AdminRoute from './admin-modules/route/adminroute';
 import Practroute from './prac1/practroute';
 import SearchProduct from './pages/seachproduct';
+import ReactGA from "react-ga4";
+
+ReactGA.initialize("G-3L6S7LZH0H");
+// Send pageview with a custom path
+useEffect(() => {
+  ReactGA.send({ hitType: "pageview", page: window.location.pathname, title: "My PAge view" });
+
+}, [])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -32,7 +40,7 @@ root.render(
           <Route path='filterproduct' element={<SearchProduct/>}/>
            {/* Protected Admin Routes */}
            <Route path="/admin/*" element={<AdminRoute />} />
-           <Route path="/prac1/*" element={<Practroute />} />
+           
 
            
           

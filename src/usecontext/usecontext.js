@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import ThemeContexts from './createcontext';
-
+import ReactGA from "react-ga4";
 import axios from 'axios';
 import { showErrorToast, showSuccessToast } from '../utils/toast_utils';
 
@@ -155,6 +155,14 @@ const [searchallproduct, setsearchallproduct] = useState([])
         { author: user._id }, // Pass the user ID or whatever data is needed
         { withCredentials: true } // Ensure credentials (cookies, tokens) are sent
       );
+      ReactGA.event({
+        category: "your category",
+        action: "your action",
+        label: "your label", // optional
+        value: 99, // optional, must be a number
+        nonInteraction: true, // optional, true/false
+        transport: "xhr", // optional, beacon/xhr/image
+      });
       showSuccessToast({
         message: `${user.username}, you added the product to your cart.`,
       });
