@@ -39,6 +39,7 @@ root.render(
           <Route path='register' element={<RegisterUser/>}/>
           <Route path='filterproduct' element={<SearchProduct/>}/>
            {/* Protected Admin Routes */}
+           {/* <Route path="/prac1/*" element={<Practroute />} /> */}
            <Route path="/admin/*" element={<AdminRoute />} />
            
 

@@ -150,18 +150,17 @@ const [searchallproduct, setsearchallproduct] = useState([])
 
   const handleAddToCartClick = async (id) => {
     try {
-       await axios.put(
+     await axios.put(
         `https://ecommerce-food-api.onrender.com/product/addtocart/${id}`,
         { author: user._id }, // Pass the user ID or whatever data is needed
         { withCredentials: true } // Ensure credentials (cookies, tokens) are sent
       );
       ReactGA.event({
-        category: "your category",
-        action: "your action",
-        label: "your label", // optional
-        value: 99, // optional, must be a number
-        nonInteraction: true, // optional, true/false
-        transport: "xhr", // optional, beacon/xhr/image
+        category: 'Cart', // You can customize the category
+      action: 'Add cart',
+      label: `Product ID: ${id}`, // Optionally, use the product name or ID as a label
+      value: id,
+       
       });
       showSuccessToast({
         message: `${user.username}, you added the product to your cart.`,
